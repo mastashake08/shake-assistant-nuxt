@@ -23,18 +23,17 @@ export default {
     methods: {
         async generateOutput() {
             try {
-                console.log(window.ai)
                 const canCreate = await window.ai.canCreateTextSession();
                 if (canCreate !== "no") {
                     const session = await window.ai.createTextSession();
-                    console.log(session)
+                    
                     this.output = await session.prompt(this.promptMessage);
                     
                 } else {
                     console.log('Cannot create')
                 }
             } catch (error) {
-                console.error(error)
+                console.log(error)
             }
         },
     },
