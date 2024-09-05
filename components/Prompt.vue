@@ -23,6 +23,7 @@ export default {
     methods: {
         async generateOutput() {
             try {
+                console.log("GENERATING >>>")
                 const canCreate = await window.ai.canCreateTextSession();
                 if (canCreate !== "no") {
                     const session = await window.ai.createTextSession();
